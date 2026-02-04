@@ -1,0 +1,65 @@
+<div class="backdrop js-feedback-backdrop" data-feedback-backdrop>
+  <div
+    class="feedback-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="feedback-title"
+  >
+    <button
+      class="feedback-close-btn js-feedback-close"
+      type="button"
+      aria-label="Close feedback form"
+    >
+      ✕
+    </button>
+
+    <h2 class="feedback-title" id="feedback-title">Submit feedback</h2>
+
+    <form class="feedback-form js-feedback-form" novalidate>
+      <label class="feedback-label">
+        <span class="feedback-label-text">Name</span>
+        <input
+          class="feedback-input"
+          type="text"
+          name="name"
+          placeholder="Emily"
+          required
+        />
+      </label>
+
+      <label class="feedback-label">
+        <span class="feedback-label-text">Message</span>
+        <textarea
+          class="feedback-textarea"
+          name="message"
+          placeholder="Type your message..."
+          rows="5"
+          required
+        ></textarea>
+      </label>
+
+      <div class="rating-stars js-rating" data-rating="0">
+        <button class="star" type="button" data-value="1">
+          <svg><use href="../img/icons.svg#icon-star-outline"></use></svg>
+        </button>
+        <button class="star" type="button" data-value="2">
+          <svg><use href="../img/icons.svg#icon-star-outline"></use></svg>
+        </button>
+        <button class="star" type="button" data-value="3">
+          <svg><use href="../img/icons.svg#icon-star-outline"></use></svg>
+        </button>
+        <button class="star" type="button" data-value="4">
+          <svg><use href="../img/icons.svg#icon-star-outline"></use></svg>
+        </button>
+        <button class="star" type="button" data-value="5">
+          <svg><use href="../img/icons.svg#icon-star-outline"></use></svg>
+        </button>
+      </div>
+
+      <button class="feedback-submit-btn js-feedback-submit" type="submit">
+        <span class="js-submit-text">Submit</span>
+        <span class="loader js-submit-loader" hidden></span>
+      </button>
+    </form>
+  </div>
+</div>

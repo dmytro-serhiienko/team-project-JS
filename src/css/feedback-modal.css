@@ -1,0 +1,239 @@
+/* backdrop */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* модалка */
+.feedback-modal {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 16px;
+  padding: 64px 16px 58px;
+  background-color: #000000;
+  border-radius: 16px;
+  color: #e5e7eb;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.feedback-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* кнопка закриття */
+.feedback-close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border: none;
+  color: #fff;
+  background: transparent;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  transition: color 150ms ease-in-out;
+}
+
+/* форма */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.feedback-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedback-label-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.feedback-input,
+.feedback-textarea {
+  min-width: 288px;
+  min-height: 43px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ffffff33;
+  background-color: transparent;
+  font: 400 18px / 150% var(--font-family);
+  color: var(--opacity-white-60);
+  font-size: 18px;
+  outline: none;
+  transition:
+    border-color 150ms ease-in-out,
+    box-shadow 150ms ease-in-out;
+}
+
+.feedback-input::placeholder,
+.feedback-textarea::placeholder {
+  color: #4b5563;
+}
+
+.feedback-input:focus,
+.feedback-textarea:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4);
+}
+
+/* кнопка сабміту */
+.feedback-submit-btn {
+  min-width: 288px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  box-shadow:
+    0 1px 2px 0 var(--opacity-neutral-darkest-5),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px var(--opacity-neutral-darkest-15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 var(--opacity-white-5);
+  background: var(--color-affair);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition:
+    transform 150ms ease-in-out,
+    box-shadow 150ms ease-in-out,
+    opacity 150ms ease-in-out;
+}
+
+.feedback-submit-btn:hover,
+.feedback-submit-btn:focus-visible {
+  transform: translateY(-1px);
+  opacity: 0.6;
+}
+
+.star {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 31px;
+  height: 29px;
+
+  color: #ffffff; /* ← ОБОВʼЯЗКОВО! дефолт = білі */
+  transition:
+    transform 150ms ease-in-out,
+    color 200ms ease-in-out;
+}
+
+.star svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 200ms ease-in-out;
+}
+
+/* активна зірка */
+.star.active {
+  color: #8b5cf6; /* ← фіолетовий */
+}
+
+.star.active svg {
+  transform: scale(1.15);
+}
+
+/* hover */
+.star:hover svg {
+  transform: scale(1.1);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* блокування скролу */
+.body-no-scroll {
+  overflow: hidden;
+}
+
+/* планшет */
+@media (min-width: 768px) {
+  .feedback-modal {
+    max-width: 420px;
+    padding: 28px 24px 24px;
+  }
+
+  .feedback-title {
+    font-size: 22px;
+  }
+}
+
+:root {
+  --color-scheme-1-background: var(--color-neutral-darkest);
+  --color-neutral-darkest: #060307;
+  --color-scheme-1-border: var(--opacity-white-20);
+  --color-scheme-1-text: var(--color-white);
+  --color-neutral-lighter: #d9d9d9;
+  --color-white: #fff;
+  --color-neutral-lightest: #f2f2f2;
+  --color-neutral-light: #b4b3b4;
+  --color-neutral: #828183;
+  --color-neutral-dark: #504e51;
+  --color-neutral-darker: #1e1c1f;
+  --opacity-transparent: rgba(255, 255, 255, 0);
+  --color-scheme-1-foreground: var(--color-neutral-darkest);
+  --color-scheme-1-accent: var(--color-white);
+  --opacity-white-5: rgba(255, 255, 255, 0.05);
+  --opacity-white-10: rgba(255, 255, 255, 0.1);
+  --opacity-white-15: rgba(255, 255, 255, 0.15);
+  --opacity-white-20: rgba(255, 255, 255, 0.2);
+  --opacity-white-30: rgba(255, 255, 255, 0.3);
+  --opacity-white-40: rgba(255, 255, 255, 0.4);
+  --opacity-white-50: rgba(255, 255, 255, 0.5);
+  --opacity-white-60: rgba(255, 255, 255, 0.6);
+  --opacity-neutral-darkest-5: rgba(6, 3, 7, 0.05);
+  --opacity-neutral-darkest-10: rgba(6, 3, 7, 0.1);
+  --opacity-neutral-darkest-15: rgba(6, 3, 7, 0.15);
+  --opacity-neutral-darkest-20: rgba(6, 3, 7, 0.2);
+  --opacity-neutral-darkest-30: rgba(6, 3, 7, 0.3);
+  --opacity-neutral-darkest-40: rgba(6, 3, 7, 0.4);
+  --opacity-neutral-darkest-50: rgba(6, 3, 7, 0.5);
+  --opacity-neutral-darkest-60: rgba(6, 3, 7, 0.6);
+  --color-affair-lightest: #f1ecf4;
+  --color-affair-lighter: #e3d9e9;
+  --color-affair-light: #9f7ab2;
+  --color-affair: #764191;
+  --color-affair-dark: #5e3474;
+  --color-affair-darker: #2f1a3a;
+  --color-affair-darkest: #23132b;
+  --color-chateau-green-lightest: #ecf4ed;
+  --color-chateau-green-lighter: #d9eadc;
+  --color-chateau-green-light: #7ab686;
+  --color-chateau-green: #419853;
+  --color-chateau-green-dark: #347942;
+  --color-chateau-green-darker: #1a3c21;
+  --color-chateau-green-darkest: #132d18;
+  --color-scheme-2-text: var(--color-white);
+  --color-scheme-2-background: var(--color-neutral-darker);
+  --color-scheme-2-border: var(--opacity-white-20);
+  --color-scheme-2-accent: var(--color-white);
+  --color-scheme-2-foreground: var(--color-neutral-darker);
+  --color-scheme-3-text: var(--color-white);
+  --color-scheme-3-background: var(--color-affair-darkest);
+  --color-scheme-3-border: var(--opacity-white-20);
+  --color-scheme-3-accent: var(--color-white);
+  --color-scheme-3-foreground: var(--color-affair-darkest);
+  --color-error-red: #af0404;
+}
