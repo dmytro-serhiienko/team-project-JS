@@ -156,7 +156,7 @@ function escapeHtml(text) {
 
 function renderArtistDetails(data) {
   const name = data.strArtist || data.name || 'Unknown Artist';
-  const image = data.strArtistThumb || data.image || '/img/placeholder.jpg';
+  const image = data.strArtistThumb || data.image || '';
   const country = data.strCountry || data.country || 'Unknown';
   const biography =
     data.strBiographyEN ||
@@ -198,10 +198,17 @@ function renderArtistDetails(data) {
        </div>`;
   }
 
+  let imageHtml = '';
+  if (image) {
+    imageHtml = `<img src="${image}" alt="${name}" class="artist-image" />`;
+  } else {
+    imageHtml = '<div class="artist-image-placeholder">No Image</div>';
+  }
+
   let html = `
     <div class="artist-header">
       <h2 class="artist-name">${name}</h2>
-      <img src="${image}" alt="${name}" class="artist-image" onerror="this.src='/img/placeholder.jpg'" />
+      ${imageHtml}
     </div>
     
     <div class="artist-info">
