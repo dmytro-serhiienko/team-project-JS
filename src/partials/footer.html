@@ -67,8 +67,22 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg class="footer__social-icon" width="40" height="40">
-                <use href="/img/icons.svg#icon-youtube"></use>
+              <!-- Inline SVG to ensure styles work in all browsers (Opera fix) -->
+              <svg
+                class="footer__social-icon"
+                width="40"
+                height="40"
+                viewBox="0 0 45 32"
+                aria-hidden="true"
+              >
+                <path
+                  class="youtube-bg"
+                  d="M41.828 4.7c-0.243-0.902-0.718-1.724-1.377-2.385s-1.481-1.138-2.382-1.383c-3.341-0.917-16.706-0.932-16.706-0.932s-13.363-0.015-16.706 0.862c-0.9 0.256-1.72 0.74-2.38 1.404s-1.138 1.487-1.388 2.389c-0.881 3.341-0.89 10.27-0.89 10.27s-0.009 6.963 0.866 10.27c0.491 1.828 1.931 3.273 3.761 3.765 3.375 0.917 16.704 0.932 16.704 0.932s13.365 0.015 16.706-0.86c0.901-0.245 1.723-0.72 2.384-1.38s1.139-1.481 1.385-2.381c0.883-3.339 0.89-10.266 0.89-10.266s0.043-6.965-0.868-10.306z"
+                ></path>
+                <path
+                  class="youtube-triangle"
+                  d="M17.088 21.344l0.011-12.8 11.108 6.411-11.119 6.389z"
+                ></path>
               </svg>
             </a>
           </li>

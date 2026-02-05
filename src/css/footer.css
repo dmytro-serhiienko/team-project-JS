@@ -112,6 +112,20 @@
     filter: drop-shadow(0 0 5px #ea333e) drop-shadow(0 0 12px rgba(234, 51, 62, 0.2));
 }
 
+/* White triangle on hover/focus */
+.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:hover .footer__social-icon .youtube-triangle,
+.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:focus .footer__social-icon .youtube-triangle,
+.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:hover .footer__social-icon path.youtube-triangle,
+.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:focus .footer__social-icon path.youtube-triangle {
+    fill: #fff !important;
+}
+
+/* Default black triangle and smooth transition */
+.footer__social-icon .youtube-triangle {
+    fill: #000;
+    transition: fill 0.2s ease;
+}
+
 .footer__copyright {
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 400;
