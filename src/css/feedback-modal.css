@@ -90,6 +90,16 @@
   box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4);
 }
 
+.feedback-error {
+  border-color: #dc2626 !important; /* червона рамка */
+}
+
+.feedback-error-text {
+  color: #dc2626;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
 /* кнопка сабміту */
 .feedback-submit-btn {
   min-width: 288px;
@@ -123,37 +133,34 @@
   opacity: 0.6;
 }
 
-.star {
-  background: transparent;
+/* зірки */
+
+.rating {
+  display: flex;
+  gap: 8px;
+}
+
+.rating-star {
+  background: none;
   border: none;
-  cursor: pointer;
   padding: 0;
-  width: 31px;
-  height: 29px;
+  cursor: pointer;
+}
 
-  color: #ffffff; /* ← ОБОВʼЯЗКОВО! дефолт = білі */
+.rating-icon {
+  width: 32px;
+  height: 32px;
+  color: #ffffff; /* неактивний стан — білі */
   transition:
-    transform 150ms ease-in-out,
-    color 200ms ease-in-out;
+    color 0.2s ease,
+    transform 0.15s ease;
 }
 
-.star svg {
-  width: 100%;
-  height: 100%;
-  transition: transform 200ms ease-in-out;
+.rating-star.active .rating-icon {
+  color: #764191; /* активний стан — фіолетові */
 }
 
-/* активна зірка */
-.star.active {
-  color: #8b5cf6; /* ← фіолетовий */
-}
-
-.star.active svg {
-  transform: scale(1.15);
-}
-
-/* hover */
-.star:hover svg {
+.rating-star:hover .rating-icon {
   transform: scale(1.1);
 }
 
@@ -163,6 +170,9 @@
   }
 }
 
+.rating__star:hover .rating__icon {
+  transform: scale(1.1);
+}
 /* блокування скролу */
 .body-no-scroll {
   overflow: hidden;

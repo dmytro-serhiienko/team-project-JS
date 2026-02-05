@@ -1,4 +1,4 @@
-<div class="backdrop js-feedback-backdrop" data-feedback-backdrop>
+<div class="backdrop js-feedback-backdrop" data-feedback-backdrop hidden>
   <div
     class="feedback-modal"
     role="dialog"
@@ -38,21 +38,31 @@
         ></textarea>
       </label>
 
-      <div class="rating-stars js-rating" data-rating="0">
-        <button class="star" type="button" data-value="1">
-          <svg><use href="../img/icons.svg#icon-star-outline"></use></svg>
+      <div class="rating" data-rating="0">
+        <button class="rating-star" data-value="1" type="button">
+          <svg class="rating-icon">
+            <use href="#icon-star"></use>
+          </svg>
         </button>
-        <button class="star" type="button" data-value="2">
-          <svg><use href="../img/icons.svg#icon-star-outline"></use></svg>
+        <button class="rating-star" data-value="2" type="button">
+          <svg class="rating-icon">
+            <use href="#icon-star"></use>
+          </svg>
         </button>
-        <button class="star" type="button" data-value="3">
-          <svg><use href="../img/icons.svg#icon-star-outline"></use></svg>
+        <button class="rating-star" data-value="3" type="button">
+          <svg class="rating-icon">
+            <use href="#icon-star"></use>
+          </svg>
         </button>
-        <button class="star" type="button" data-value="4">
-          <svg><use href="../img/icons.svg#icon-star-outline"></use></svg>
+        <button class="rating-star" data-value="4" type="button">
+          <svg class="rating-icon">
+            <use href="#icon-star"></use>
+          </svg>
         </button>
-        <button class="star" type="button" data-value="5">
-          <svg><use href="../img/icons.svg#icon-star-outline"></use></svg>
+        <button class="rating-star" data-value="5" type="button">
+          <svg class="rating-icon">
+            <use href="#icon-star"></use>
+          </svg>
         </button>
       </div>
 
@@ -60,6 +70,16 @@
         <span class="js-submit-text">Submit</span>
         <span class="loader js-submit-loader" hidden></span>
       </button>
+      <input type="hidden" name="rating" id="rating-input" value="0" />
     </form>
   </div>
+
+  <svg style="display: none">
+    <symbol id="icon-star" viewBox="0 0 34 32">
+      <path
+        d="M15.277 1.031c0.579-1.375 2.551-1.375 3.13 0l3.417 8.116c0.244 0.58 0.796 0.976 1.43 1.026l8.869 0.702c1.503 0.119 2.112 1.972 0.967 2.941l-6.757 5.718c-0.483 0.408-0.694 1.049-0.546 1.66l2.064 8.55c0.35 1.449-1.245 2.594-2.532 1.817l-7.593-4.582c-0.542-0.327-1.224-0.327-1.767 0l-7.593 4.582c-1.287 0.776-2.882-0.369-2.532-1.817l2.064-8.55c0.147-0.611-0.063-1.252-0.546-1.66l-6.757-5.718c-1.145-0.969-0.536-2.822 0.967-2.941l8.869-0.702c0.633-0.050 1.185-0.446 1.429-1.026l3.417-8.116z"
+        fill="currentColor"
+      />
+    </symbol>
+  </svg>
 </div>
