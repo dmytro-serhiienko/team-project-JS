@@ -163,7 +163,6 @@ function renderArtistDetails(data) {
     data.biography ||
     data.bio ||
     'No biography available.';
-  const type = data.strType || data.type || 'Unknown';
   const gender = data.strGender || data.gender;
   const members = data.intMembers || data.members;
 
@@ -180,82 +179,74 @@ function renderArtistDetails(data) {
   }
 
   const albums = data.albumsList || data.albums || [];
-  //   console.log('Processed albums:', albums);
 
+  // Формуємо HTML для окремих блоків
   let membersHtml = '';
   if (members && members !== '0' && members > 0) {
-    membersHtml = `<div class="artist-info-item">
+    membersHtml = `
+      <div class="artist-info-item">
          <span class="artist-info-label">Members</span>
          <span class="artist-info-value">${members}</span>
-       </div>`;
+      </div>`;
   }
 
   let genderHtml = '';
   if (gender) {
-    genderHtml = `<div class="artist-info-item">
+    genderHtml = `
+      <div class="artist-info-item">
          <span class="artist-info-label">Sex</span>
          <span class="artist-info-value">${gender}</span>
-       </div>`;
+      </div>`;
   }
 
-  let imageHtml = '';
-  if (image) {
-    imageHtml = `<img src="${image}" alt="${name}" class="artist-image" />`;
-  } else {
-    imageHtml = '<div class="artist-image-placeholder">No Image</div>';
-  }
+  let imageHtml = image 
+    ? `<img src="${image}" alt="${name}" class="artist-image" />`
+    : '<div class="artist-image-placeholder">No Image</div>';
 
+ //--------------------
   let html = `
-    <div class="artist-header">
-      <h2 class="artist-name">${name}</h2>
+  <h2 class="artist-name">${name}</h2>
+  
+  <div class="artist-header">
       ${imageHtml}
-    </div>
-    
-    <div class="artist-info">
-      <div class="artist-info-item">
-        <span class="artist-info-label">Years active</span>
-        <span class="artist-info-value">${formatYearsActive(lifeSpan)}</span>
-      </div>
       
-      ${genderHtml}
-      ${membersHtml}
-      
-      <div class="artist-info-item">
-        <span class="artist-info-label">Country</span>
-        <span class="artist-info-value">${country}</span>
+      <div class="artist-main-content">
+        <div class="artist-info">
+          <div class="artist-info-item">
+            <span class="artist-info-label">Years active</span>
+            <span class="artist-info-value">${formatYearsActive(lifeSpan)}</span>
+          </div>
+          ${genderHtml}
+          ${membersHtml}
+          <div class="artist-info-item">
+            <span class="artist-info-label">Country</span>
+            <span class="artist-info-value">${country}</span>
+          </div>
+        </div>
+
+        <div class="artist-biography">
+          <h3 class="artist-section-title__bio">Biography</h3>
+          <p class="artist-biography-text">${biography}</p>
+        </div>
+
+        ${genres.length > 0 ? `
+          <div class="artist-genres">
+            ${genres.map(genre => `<span class="genre-tag__modal">${genre}</span>`).join('')}
+          </div>
+        ` : ''}
       </div>
     </div>
-  `;
 
-  if (biography) {
-    html += `
-      <div class="artist-biography">
-        <h3 class="artist-section-title__bio">Biography</h3>
-        <p class="artist-biography-text">${biography}</p>
-      </div>
-    `;
-  }
-
-  if (genres && genres.length > 0) {
-    html += `
-      <div class="artist-genres">
-        ${genres.map(genre => `<span class="genre-tag__modal">${genre}</span>`).join('')}
-      </div>
-    `;
-  }
-
-  if (albums && albums.length > 0) {
-    html += `
+    ${albums.length > 0 ? `
       <h3 class="artist-section-title__alb">Albums</h3>
       <div class="artist-albums">
         ${renderAlbums(albums)}
       </div>
-    `;
-  }
+    ` : ''}
+  `;
 
   refs.content.innerHTML = html;
 }
-
 function renderAlbums(albums) {
   return albums
     .map(album => {

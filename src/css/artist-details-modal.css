@@ -1,4 +1,4 @@
-/* DMYTRO SERHIIENKO  */
+
 .artist-modal-backdrop {
   position: fixed;
   top: 0;
@@ -444,6 +444,7 @@
 }
 
 /* DESC */
+/*
 @media (min-width: 1440px) {
   .artist-modal-backdrop {
     padding: 10px;
@@ -457,4 +458,151 @@
     font-size: 20px;
   }
 }
-/* DMYTRO SERHIIENKO  */
+*/
+/* --- DESKTOP VERSION (1440px+) --- */
+@media (min-width: 1440px) {
+  .artist-modal {
+    width: 1312px;
+    height: 1655px; 
+    padding: 64px;    
+    display: block;
+    overflow-y: auto;
+    flex-direction: column;    
+    position: relative;
+  }
+
+  /* Верхня частина: Фото зліва, Інфо справа */
+  .artist-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    text-align: left;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .artist-main-content {
+    flex: 1; /* Займає весь вільний простір справа */
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .artist-name {
+    font-size: 28px;
+    line-height: 1.2;
+    text-align: center;
+    position: static; /* Назва артиста центрована зверху модалки */
+    left: auto;
+    transform: none;
+    top: auto;
+    margin-bottom: 32;
+    width: 100%;
+
+  }
+
+  .artist-image {
+    width: 576px; 
+    height: 354px;  
+    border-radius: 16px;    
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  /* Блок з текстом справа від фото */
+  .artist-info-container {
+    margin-top: 40px;
+    flex: 1;
+  }
+
+  .artist-info {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Роки/Стать та Учасники/Країна */
+    gap: 16px 32px;
+    margin-bottom: 24px;
+  }
+
+  .artist-info-label {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .artist-info-value {
+    font-size: 18px;
+  }
+
+  /* Біографія з прокруткою */
+  .artist-biography {
+    margin-bottom: 24px;
+  }
+
+  .artist-biography-text {
+    font-size: 14px;
+    line-height: 1.5;
+    height: 100px; /* Фіксована висота для появи скролу */
+    overflow-y: auto;
+    padding-right: 8px;
+    margin-top: 8px;
+    color: #fff;
+  }
+
+  /* Стилізація скролу біографії */
+  .artist-biography-text::-webkit-scrollbar {
+    width: 4px;
+  }
+  .artist-biography-text::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+
+  /* Жанри під біографією */
+  .artist-genres {
+    margin-bottom: 0;
+    gap: 16px;
+  }
+
+  /* Секція альбомів: 4 в ряд */
+  .artist-albums {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .album-item {
+    width: 100%;
+    padding: 12px;
+    min-width: 0; /* Важливо для grid */
+  }
+
+  .album-title {
+    font-size: 14px;
+    margin-bottom: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Таблиця треків (компактніша для 4 колонок) */
+  .track-item {
+    padding: 8px 6px;
+    grid-template-columns: 1fr 35px 30px;
+    gap: 4px;
+  }
+
+  .track-name, .track-time {
+    font-size: 11px;
+  }
+
+  /* YouTube Hover */
+  .track-youtube-link svg {
+    fill: #fff;
+    transition: fill 0.2s ease;
+  }
+
+  .track-youtube-link:hover svg {
+    fill: #b3b3b3; 
+  }
+}
+
