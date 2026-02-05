@@ -1,0 +1,247 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+}
+
+.footer>.container {
+    padding-top: 59px;
+    padding-bottom: 35px;
+}
+
+.footer__top {
+    text-align: center;
+}
+
+.footer__nav {
+    margin-bottom: 48px;
+}
+
+.footer__logo-link {
+    display: inline-block;
+    margin-bottom: 32px;
+}
+
+.footer__logo {
+    display: block;
+}
+
+.footer__nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.footer__nav-link {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #fff;
+}
+
+.footer__nav-link:active {
+    opacity: 0.7;
+}
+
+.footer__bottom {
+    padding-top: 24px;
+    position: relative;
+}
+
+.footer__bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.footer__social-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.footer__social-link:active {
+    opacity: 0.7;
+}
+
+.footer__social-icon {
+    fill: #fff;
+    transition: transform 0.35s ease, filter 0.35s ease, fill 0.25s ease;
+    transform-origin: center;
+    will-change: transform, filter;
+    display: inline-block;
+    -webkit-filter: none;
+    filter: none;
+    overflow: visible;
+}
+
+/* Глобальное свечение и масштаб при hover/focus (все разрешения) */
+.footer__social-link:hover .footer__social-icon,
+.footer__social-link:focus .footer__social-icon {
+    transform: scale(1.5);
+}
+
+/* Instagram */
+.footer__social-list .footer__social-item:nth-child(1) .footer__social-link:hover .footer__social-icon,
+.footer__social-list .footer__social-item:nth-child(1) .footer__social-link:focus .footer__social-icon path {
+    fill: #b300b3;
+    -webkit-filter: drop-shadow(0 0 5px #b300b3) drop-shadow(0 0 12px rgba(179, 0, 179, 0.2));
+    filter: drop-shadow(0 0 5px #b300b3) drop-shadow(0 0 12px rgba(179, 0, 179, 0.2));
+}
+
+/* Facebook */
+.footer__social-list .footer__social-item:nth-child(2) .footer__social-link:hover .footer__social-icon,
+.footer__social-list .footer__social-item:nth-child(2) .footer__social-link:focus .footer__social-icon path {
+    fill: #3b5998;
+    -webkit-filter: drop-shadow(0 0 5px #3b5998) drop-shadow(0 0 12px rgba(59, 89, 152, 0.2));
+    filter: drop-shadow(0 0 5px #3b5998) drop-shadow(0 0 12px rgba(59, 89, 152, 0.2));
+}
+
+/* YouTube */
+.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:hover .footer__social-icon,
+.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:focus .footer__social-icon path {
+    fill: #ea333e;
+    -webkit-filter: drop-shadow(0 0 5px #ea333e) drop-shadow(0 0 12px rgba(234, 51, 62, 0.2));
+    filter: drop-shadow(0 0 5px #ea333e) drop-shadow(0 0 12px rgba(234, 51, 62, 0.2));
+}
+
+.footer__copyright {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #fff;
+    text-align: center;
+}
+
+/* Адаптив */
+
+@media only screen and (min-width: 768px) {
+    .footer>.container {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .footer__logo {
+        width: 116px;
+        height: 45px;
+    }
+
+    .footer__nav-list {
+        flex-direction: row;
+        justify-content: center
+    }
+
+    .footer__nav {
+        margin-bottom: 80px;
+    }
+
+    .footer__bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 32px;
+        flex-direction: row-reverse;
+    }
+
+    .footer__social-list {
+        margin-bottom: 0;
+        gap: 24px;
+    }
+
+    .footer__social-link {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .footer__social-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer__copyright {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .footer__social-icon {
+        width: 24px;
+        height: 24px;
+        transition: all 0.5s ease;
+    }
+
+    .footer__bottom {
+        align-items: flex-end;
+    }
+
+    .footer__social-item {
+        display: block;
+        line-height: 0;
+    }
+
+    .footer__social-link {
+        display: block;
+        line-height: 0;
+    }
+
+    /* Hover і focus для іконок соцмереж */
+    .footer__social-link:hover .footer__social-icon,
+    .footer__social-link:focus .footer__social-icon {
+        transform: scale(1.2);
+    }
+
+    /* Instagram */
+    .footer__social-list .footer__social-item:nth-child(1) .footer__social-link:hover .footer__social-icon,
+    .footer__social-list .footer__social-item:nth-child(1) .footer__social-link:focus .footer__social-icon {
+        fill: #b300b3;
+        -webkit-filter: drop-shadow(0 0 5px #b300b3) drop-shadow(0 0 12px rgba(179, 0, 179, 0.2));
+        filter: drop-shadow(0 0 5px #b300b3) drop-shadow(0 0 12px rgba(179, 0, 179, 0.2));
+    }
+
+    /* Facebook */
+    .footer__social-list .footer__social-item:nth-child(2) .footer__social-link:hover .footer__social-icon,
+    .footer__social-list .footer__social-item:nth-child(2) .footer__social-link:focus .footer__social-icon {
+        fill: #3b5998;
+        -webkit-filter: drop-shadow(0 0 5px #3b5998) drop-shadow(0 0 12px rgba(59, 89, 152, 0.2));
+        filter: drop-shadow(0 0 5px #3b5998) drop-shadow(0 0 12px rgba(59, 89, 152, 0.2));
+    }
+
+    /* YouTube */
+    .footer__social-list .footer__social-item:nth-child(3) .footer__social-link:hover .footer__social-icon,
+    .footer__social-list .footer__social-item:nth-child(3) .footer__social-link:focus .footer__social-icon {
+        fill: #ea333e;
+        -webkit-filter: drop-shadow(0 0 5px #ea333e) drop-shadow(0 0 12px rgba(234, 51, 62, 0.2));
+        filter: drop-shadow(0 0 5px #ea333e) drop-shadow(0 0 12px rgba(234, 51, 62, 0.2));
+    }
+
+    /* Підкреслення для навігації */
+    .footer__nav-link {
+        position: relative;
+    }
+
+    .footer__nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 1px;
+        background-color: #fff;
+        transition: width 0.3s ease;
+    }
+
+    .footer__nav-link:hover::after,
+    .footer__nav-link:focus::after {
+        width: 100%;
+    }
+
+    .footer__nav-link:active {
+        opacity: 0.7;
+    }
+}
