@@ -309,3 +309,7 @@
     transform: rotate(360deg);
   }
 }
+
+.backdrop[hidden] {
+  display: none !important;
+}
