@@ -67,10 +67,6 @@
     margin-bottom: 32px;
 }
 
-.footer__social-link:active {
-    opacity: 0.7;
-}
-
 .footer__social-icon {
     fill: #fff;
     transition: transform 0.35s ease, filter 0.35s ease, fill 0.25s ease;
@@ -82,42 +78,24 @@
     overflow: visible;
 }
 
-/* Глобальное свечение и масштаб при hover/focus (все разрешения) */
-.footer__social-link:hover .footer__social-icon,
-.footer__social-link:focus .footer__social-icon {
-    transform: scale(1.5);
+/* Instagram white background */
+.footer__social-list .footer__social-item:nth-child(1) .footer__social-link {
+    position: relative;
 }
 
-/* Instagram */
-.footer__social-list .footer__social-item:nth-child(1) .footer__social-link:hover .footer__social-icon,
-.footer__social-list .footer__social-item:nth-child(1) .footer__social-link:focus .footer__social-icon path {
-    fill: #b300b3;
-    -webkit-filter: drop-shadow(0 0 5px #b300b3) drop-shadow(0 0 12px rgba(179, 0, 179, 0.2));
-    filter: drop-shadow(0 0 5px #b300b3) drop-shadow(0 0 12px rgba(179, 0, 179, 0.2));
+.footer__social-list .footer__social-item:nth-child(1) .footer__social-icon {
+    position: relative;
+    z-index: 1;
 }
 
 /* Facebook */
-.footer__social-list .footer__social-item:nth-child(2) .footer__social-link:hover .footer__social-icon,
-.footer__social-list .footer__social-item:nth-child(2) .footer__social-link:focus .footer__social-icon path {
-    fill: #3b5998;
-    -webkit-filter: drop-shadow(0 0 5px #3b5998) drop-shadow(0 0 12px rgba(59, 89, 152, 0.2));
-    filter: drop-shadow(0 0 5px #3b5998) drop-shadow(0 0 12px rgba(59, 89, 152, 0.2));
+.footer__social-list .footer__social-item:nth-child(2) .footer__social-link {
+    position: relative;
 }
 
-/* YouTube */
-.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:hover .footer__social-icon,
-.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:focus .footer__social-icon path {
-    fill: #ea333e;
-    -webkit-filter: drop-shadow(0 0 5px #ea333e) drop-shadow(0 0 12px rgba(234, 51, 62, 0.2));
-    filter: drop-shadow(0 0 5px #ea333e) drop-shadow(0 0 12px rgba(234, 51, 62, 0.2));
-}
-
-/* White triangle on hover/focus */
-.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:hover .footer__social-icon .youtube-triangle,
-.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:focus .footer__social-icon .youtube-triangle,
-.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:hover .footer__social-icon path.youtube-triangle,
-.footer__social-list .footer__social-item:nth-child(3) .footer__social-link:focus .footer__social-icon path.youtube-triangle {
-    fill: #fff !important;
+.footer__social-list .footer__social-item:nth-child(2) .footer__social-icon {
+    position: relative;
+    z-index: 1;
 }
 
 /* Default black triangle and smooth transition */
@@ -204,35 +182,150 @@
         line-height: 0;
     }
 
-    /* Hover і focus для іконок соцмереж */
-    .footer__social-link:hover .footer__social-icon,
-    .footer__social-link:focus .footer__social-icon {
-        transform: scale(1.2);
-    }
+        /* Instagram — default */
+        .footer__social-list .footer__social-item:nth-child(1) .footer__social-link {
+            position: relative;
+        }
+    
+        .footer__social-list .footer__social-item:nth-child(1) .footer__social-icon {
+            fill: #fff;
+            position: relative;
+            z-index: 1;
+            transition: fill 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+        }
+    
+        /* Instagram white background (квадратна) */
+        .footer__social-list .footer__social-item:nth-child(1) .footer__social-link::before {
+            content: '';
+            position: absolute;
+            width: calc(24px * 0.98);
+            height: calc(24px * 0.98);
+            background-color: #fff;
+            border-radius: 4px;
+            /* Квадратна з закругленими кутами */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+    
+        /* Instagram — hover/focus-visible */
+        .footer__social-list .footer__social-item:nth-child(1) .footer__social-link:hover::before,
+        .footer__social-list .footer__social-item:nth-child(1) .footer__social-link:focus-visible::before {
+            opacity: 1;
+        }
+    
+        .footer__social-list .footer__social-item:nth-child(1) .footer__social-link:hover .footer__social-icon,
+        .footer__social-list .footer__social-item:nth-child(1) .footer__social-link:focus-visible .footer__social-icon {
+            fill: #C13584;
+            transform: scale(1.5);
+            filter: drop-shadow(0 0 3px #833AB4) drop-shadow(0 0 4.5px #C13584) drop-shadow(0 0 6px #405DE6);
+        }
+    
+        /* Instagram — active */
+        .footer__social-list .footer__social-item:nth-child(1) .footer__social-link:active::before {
+            opacity: 0;
+        }
 
-    /* Instagram */
-    .footer__social-list .footer__social-item:nth-child(1) .footer__social-link:hover .footer__social-icon,
-    .footer__social-list .footer__social-item:nth-child(1) .footer__social-link:focus .footer__social-icon {
-        fill: #b300b3;
-        -webkit-filter: drop-shadow(0 0 5px #b300b3) drop-shadow(0 0 12px rgba(179, 0, 179, 0.2));
-        filter: drop-shadow(0 0 5px #b300b3) drop-shadow(0 0 12px rgba(179, 0, 179, 0.2));
-    }
+        .footer__social-list .footer__social-item:nth-child(1) .footer__social-link:active .footer__social-icon {
+            fill: #fff;
+            transform: scale(1);
+            filter: none;
+        }
+    
+        /* Facebook — default */
+        .footer__social-list .footer__social-item:nth-child(2) .footer__social-link {
+            position: relative;
+        }
+    
+        .footer__social-list .footer__social-item:nth-child(2) .footer__social-icon {
+            position: relative;
+            z-index: 1;
+            fill: #fff;
+            transition: fill 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+        }
+    
+/* Facebook white background */
+.footer__social-list .footer__social-item:nth-child(2) .footer__social-link::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #fff 0%, rgba(255, 255, 255, 0.95) 100%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
 
-    /* Facebook */
-    .footer__social-list .footer__social-item:nth-child(2) .footer__social-link:hover .footer__social-icon,
-    .footer__social-list .footer__social-item:nth-child(2) .footer__social-link:focus .footer__social-icon {
-        fill: #3b5998;
-        -webkit-filter: drop-shadow(0 0 5px #3b5998) drop-shadow(0 0 12px rgba(59, 89, 152, 0.2));
-        filter: drop-shadow(0 0 5px #3b5998) drop-shadow(0 0 12px rgba(59, 89, 152, 0.2));
-    }
+/* Facebook — hover/focus-visible */
+.footer__social-list .footer__social-item:nth-child(2) .footer__social-link:hover::before,
+.footer__social-list .footer__social-item:nth-child(2) .footer__social-link:focus-visible::before {
+    opacity: 1;
+    box-shadow: 0 0 9px rgba(255, 255, 255, 0.75),
+        0 0 18px rgba(255, 255, 255, 0.45);
+}
 
-    /* YouTube */
-    .footer__social-list .footer__social-item:nth-child(3) .footer__social-link:hover .footer__social-icon,
-    .footer__social-list .footer__social-item:nth-child(3) .footer__social-link:focus .footer__social-icon {
-        fill: #ea333e;
-        -webkit-filter: drop-shadow(0 0 5px #ea333e) drop-shadow(0 0 12px rgba(234, 51, 62, 0.2));
-        filter: drop-shadow(0 0 5px #ea333e) drop-shadow(0 0 12px rgba(234, 51, 62, 0.2));
-    }
+.footer__social-list .footer__social-item:nth-child(2) .footer__social-link:hover .footer__social-icon,
+.footer__social-list .footer__social-item:nth-child(2) .footer__social-link:focus-visible .footer__social-icon {
+    fill: #1877f2;
+    transform: scale(1.5);
+    filter: drop-shadow(0 0 3px #1877f2) drop-shadow(0 0 4.5px #1877f2) drop-shadow(0 0 6px rgba(24, 119, 242, 0.45));
+}
+        /* Facebook — active */
+        .footer__social-list .footer__social-item:nth-child(2) .footer__social-link:active::before {
+            opacity: 0;
+            box-shadow: none;
+        }
+
+        .footer__social-list .footer__social-item:nth-child(2) .footer__social-link:active .footer__social-icon {
+            fill: #fff;
+            transform: scale(1);
+            filter: none;
+        }
+    
+        /* YouTube — default */
+        .footer__social-icon .youtube-triangle {
+            fill: #000;
+            transition: fill 0.5s ease;
+        }
+    
+        .footer__social-list .footer__social-item:nth-child(3) .footer__social-icon {
+            fill: #fff;
+            transition: fill 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+        }
+    
+        /* YouTube — hover/focus-visible */
+        .footer__social-list .footer__social-item:nth-child(3) .footer__social-link:hover .footer__social-icon,
+        .footer__social-list .footer__social-item:nth-child(3) .footer__social-link:focus-visible .footer__social-icon {
+            fill: #ea333e;
+            transform: scale(1.5);
+            filter: drop-shadow(0 0 3px #ea333e) drop-shadow(0 0 4.5px #ea333e) drop-shadow(0 0 6px rgba(234, 51, 62, 0.45));
+        }
+    
+        /* White triangle on hover/focus-visible */
+        .footer__social-list .footer__social-item:nth-child(3) .footer__social-link:hover .footer__social-icon .youtube-triangle,
+        .footer__social-list .footer__social-item:nth-child(3) .footer__social-link:focus-visible .footer__social-icon .youtube-triangle {
+            fill: #fff !important;
+        }
+    
+        /* YouTube — active */
+        .footer__social-list .footer__social-item:nth-child(3) .footer__social-link:active .footer__social-icon {
+            fill: #fff;
+            transform: scale(1);
+            filter: none;
+        }
+
+        .footer__social-list .footer__social-item:nth-child(3) .footer__social-link:active .footer__social-icon .youtube-triangle {
+            fill: #000 !important;
+        }
 
     /* Підкреслення для навігації */
     .footer__nav-link {
