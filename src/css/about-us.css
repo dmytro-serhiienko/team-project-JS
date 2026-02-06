@@ -1,0 +1,137 @@
+.about-us {
+  background: #060307;
+  padding: 64px 0;
+  color: #ffffff;
+}
+
+.about-us-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 48px;
+  text-align: start;
+}
+
+.about-us-image {
+  width: 100%;
+  max-width: 400px;
+}
+
+.about-us-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+}
+
+.about-us-content {
+  max-width: 500px;
+}
+
+.about-us-logo-icon {
+  width: 64px;
+  height: 64px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.about-us-title {
+  font-weight: 700;
+  margin: 0 0 20px;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.about-us-text {
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* планшет и выше */
+@media (min-width: 768px) {
+  .about-us {
+    padding: 64px 0;
+  }
+
+  .about-us-inner {
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 24px;
+    text-align: left;
+  }
+
+  .about-us-image {
+    max-width: 100%;
+  }
+
+  .about-us-content {
+    max-width: 704px;
+  }
+
+  .about-us-logo-icon {
+    margin: 0 0 24px 0;
+  }
+
+  .about-us-title {
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  .about-us-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #fff;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1440px) {
+  .about-us {
+    padding: 112px 0;
+  }
+
+  .about-us-inner {
+    gap: 32px;
+    flex-direction: row;
+
+    align-items: center;
+
+    text-align: left;
+  }
+
+  .about-us-image {
+    max-width: 640px;
+  }
+
+  .about-us-content {
+    max-width: 640px;
+  }
+
+  .about-us-logo-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+  }
+
+  .about-us-title {
+    font-size: 60px;
+    margin-bottom: 24px;
+  }
+
+  .about-us-text {
+    font-size: 20px;
+  }
+}
