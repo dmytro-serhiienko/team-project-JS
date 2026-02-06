@@ -1,5 +1,5 @@
 .feedback {
-  padding: 32px 16px;
+  padding: 64px 0;
   background: #060307;
   color: #fff;
   text-align: center;
@@ -18,10 +18,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; /* важно для слайдов */
+  width: 100%;
 }
 
 .stars-rating-feedback {
+  margin-bottom: 32px;
+}
+
+.text-feedback {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+
+.text-name-feedback {
+  font-weight: 600;
+  font-size: 16px;
   margin-bottom: 16px;
 }
 
@@ -47,17 +60,71 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: #764191; /* акцент для активного */
+  background: #764191;
+}
+.feedback-btn {
+  border-radius: 12px;
+  padding: 10px 24px;
+  width: 288px;
+  height: 47px;
+  box-shadow:
+    0 1px 2px 0 rgba(6, 3, 7, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #764191;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  margin-top: 16px;
+  padding: 10px 78px;
+  text-align: center;
 }
 
-/* отзыв */
-.text-feedback {
-  font-weight: 700;
-  font-size: 24px;
-  margin: 16px 0;
+@media screen and (min-width: 768px) {
+  .feedback {
+    padding: 64px 0;
+  }
+  .text-feedback {
+    font-size: 26px;
+  }
+  .feedback-btn {
+    border-radius: 12px;
+    padding: 10px 24px;
+    width: 158px;
+    height: 47px;
+    margin-top: 16px;
+    padding: 10px 14px;
+    text-align: center;
+  }
 }
 
-.text-name-feedback {
-  font-weight: 600;
-  font-size: 16px;
+@media screen and (min-width: 1440px) {
+  .feedback {
+    padding: 112px 0;
+  }
+  .text-feedback {
+    font-size: 32px;
+  }
+  .feedback-btn {
+    border-radius: 12px;
+    padding: 10px 24px;
+    width: 177px;
+    height: 47px;
+    margin-top: 80px;
+    padding: 10px 24px;
+    text-align: center;
+  }
+  .feedback-btn :hover {
+    box-shadow:
+      0 1px 2px 0 rgba(6, 3, 7, 0.05),
+      inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+      inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+      inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+      inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+    background: #764191;
+    opacity: 0.6;
+  }
 }
