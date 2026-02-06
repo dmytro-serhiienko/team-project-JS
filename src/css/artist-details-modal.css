@@ -15,8 +15,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 52px;
-  padding-bottom: 52px;
+  padding: 64px 0;
   background-color: rgba(112, 112, 112, 0.8);
   overflow: hidden;
   z-index: 1000;
@@ -50,7 +49,10 @@ h4 {
 
 .modal__artist-thumb {
   border-radius: 16px;
-  min-width: 100%;
+  width: 100%;
+  height: 167px;
+  object-fit: cover;
+  object-position: top; /* бере верх */
 }
 
 .modal__content {
@@ -59,11 +61,12 @@ h4 {
   overflow-y: auto;
   background-color: #060307;
   padding: 52px 8px;
-  margin-top: 35px;
+  margin-left: 16px;
+  margin-right: 16px;
   max-width: 288px;
   border-radius: 16px;
   overflow: scroll;
-  max-height: 100vh;
+  max-height: 100%;
   max-width: 100%;
   z-index: 1001;
 }
@@ -102,6 +105,12 @@ h4 {
   transform: scale(125%);
 }
 
+.modal__artist::after {
+  content: '';
+  display: block;
+  height: 52px;
+}
+
 .modal__artist-info {
   display: flex;
   flex-direction: column;
@@ -124,7 +133,7 @@ h4 {
 }
 
 .modal__artist-bio {
-  max-height: 280px;
+  max-height: 297px;
   overflow-y: auto;
   padding-right: 4px;
 }
@@ -165,11 +174,6 @@ h4 {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.modal__track-link svg {
-  fill: #fff;
-}
-
-/*  btn-click  */
 .btn-click {
   display: flex;
   flex-direction: column;
@@ -269,8 +273,23 @@ h4 {
 
 @media screen and (min-width: 768px) {
   .modal__content {
+    padding-top: 64px;
     padding-left: 24px;
     padding-right: 24px;
+    margin-right: 33px;
+    margin-left: 33px;
+  }
+
+  .modal__artist::after {
+    content: '';
+    display: block;
+    height: 64px;
+  }
+
+  .modal__artist-thumb {
+    width: 100%;
+    height: 400px;
+    object-position: top; /* бере верх */
   }
 
   .modal__artist-name {
@@ -301,6 +320,7 @@ h4 {
   }
 
   .modal__artist-bio {
+    max-height: 108px;
     padding-right: 8px;
   }
 
@@ -317,6 +337,15 @@ h4 {
   .modal__content {
     padding-left: 64px;
     padding-right: 64px;
+  }
+
+  .modal__artist-thumb {
+    width: 576px;
+    height: 354px;
+  }
+
+  .modal__artist-bio {
+    max-height: 135px;
   }
 
   .modal__artist-name {
@@ -359,8 +388,12 @@ h4 {
     width: calc((100% - 96px) / 4);
   }
 
-  .modal__track-link a:hover svg {
-    fill: #cc0000;
+  .modal__track-link svg {
+    transition: all 0.5s ease-in-out;
+  }
+
+  .modal__track-link svg:hover {
+    transform: scale(1.6) rotate(360deg);
   }
 }
 
