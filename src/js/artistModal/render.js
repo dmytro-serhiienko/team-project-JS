@@ -2,6 +2,9 @@ import { domRefs } from './modalElements.js';
 import { formatDuration } from './time-format.js';
 import { organizeTracksByAlbum } from './albumGrouping.js';
 
+// іконки
+import iconsUrl from '../../img/icons.svg';
+
 export function renderArtistAlbums(tracksList, artistName) {
   const albumsContainer = domRefs.albums.container;
   if (!albumsContainer) return;
@@ -59,7 +62,7 @@ export function renderArtistAlbums(tracksList, artistName) {
         a.rel = 'noopener noreferrer';
         a.innerHTML = `
         <svg width="16" height="16">
-          <use href="./icons.svg#icon-youtube"></use>
+          <use href="${iconsUrl}#icon-youtube"></use>
         </svg>`;
         link.appendChild(a);
       }

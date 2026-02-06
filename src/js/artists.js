@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { openArtistModal } from './artist-details-modal';
 
+// іконки
+import iconsUrl from '../img/icons.svg';
+
 async function fetchArtists(page = 1) {
   try {
     const response = await axios.get(
@@ -96,9 +99,9 @@ function generateArtistsMarkup(arr) {
         <p class="artists__card-description">${truncateText(strBiographyEN, 144)}</p>
        <button class="artists__card-btn open-artist-modal" data-artist-id="${_id}">
        Learn More
-        <svg class="artists__card-btn-icon" width="24" height="24" >
-        <use href="./icons.svg#icon-caret-right"></use>
-        </svg>
+        <svg class="artists__card-btn-icon" width="24" height="24">
+            <use href="${iconsUrl}#icon-caret-right"></use>
+          </svg>
        </button>
      </li>
       `
