@@ -22,6 +22,16 @@
             <path d="M15.998 9.836c-3.402 0-6.163 2.76-6.163 6.163s2.76 6.163 6.163 6.163c3.403 0 6.163-2.76 6.163-6.163s-2.76-6.163-6.163-6.163zM15.998 19.997c-2.208 0-3.998-1.79-3.998-3.998s1.79-3.998 3.998-3.998c2.208 0 3.998 1.79 3.998 3.998s-1.79 3.998-3.998 3.998z"></path>
             <path d="M23.844 9.592c0 0.795-0.644 1.439-1.439 1.439s-1.439-0.644-1.439-1.439 0.644-1.439 1.439-1.439c0.795 0 1.439 0.644 1.439 1.439z"></path>
         </symbol>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+  <defs>
+    <linearGradient id="instaStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#833AB4"/>
+      <stop offset="50%" stop-color="#C13584"/>
+      <stop offset="100%" stop-color="#405DE6"/>
+    </linearGradient>
+  </defs>
+</svg>
         <symbol id="icon-caret-right" viewBox="0 0 32 32">
             <path d="M12 25.333l10.667-9.333-10.667-9.333v18.667z"></path>
         </symbol>

@@ -1,3 +1,54 @@
-<section class="about-us" id="about-us">
-  <div class="container"></div>
+<section id="About-us" class="about-us" id="about-us">
+  <div class="container">
+    <div class="about-us-inner">
+      <div class="about-us-image">
+        <picture>
+          <source
+            srcset="
+              ./img/about-us/desktop/about-desktop-2x.webp 2x,
+              ./img/about-us/desktop/about-desktop-1x.webp 1x
+            "
+            media="(min-width: 1440px)"
+          />
+
+          <source
+            srcset="
+              ./img/about-us/tablet/about-tablet-2x.webp 2x,
+              ./img/about-us/tablet/about-tablet-1x.webp 1x
+            "
+            media="(min-width: 768px)"
+          />
+
+          <source
+            srcset="
+              ./img/about-us/mobile/about-mobile-2x.webp 2x,
+              ./img/about-us/mobile/about-mobile-1x.webp 1x
+            "
+            media="(max-width: 767px)"
+          />
+          <img
+            src="./img/about-us/mobile/about-mobile-1x.webp"
+            alt="Команда ArtistsHub"
+            width="640"
+            height="664"
+            loading="lazy"
+          />
+        </picture>
+      </div>
+
+      <div class="about-us-content">
+        <svg class="about-us-logo-icon" width="80" height="80">
+          <use href="./img/icons.svg#icon-logo"></use>
+        </svg>
+
+        <h2 class="about-us-title">About ArtistsHub</h2>
+
+        <p class="about-us-text">
+          At ArtistsHub, our mission is to connect music lovers with the artists
+          they adore. We strive to create a vibrant community where discovering
+          new music is as enjoyable as listening to it.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
