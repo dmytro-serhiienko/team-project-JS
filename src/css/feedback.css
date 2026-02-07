@@ -165,19 +165,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.5;
     width: 48px;
     height: 48px;
     padding: 0;
-
-    background-color: var(--color-scheme-1-foreground);    
+    
+    /* background-color: var(--color-scheme-1-foreground); */
+    background-color: rgb(from var(--color-scheme-1-foreground) r g b / 20%);    
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    opacity: 0.8;
   }
 
   /* Стилізуємо іконку */
   .feedback-icon {
+    width: 24px !important;    
     fill: #fff !important;
     stroke: #fff !important;   
     pointer-events: none;
