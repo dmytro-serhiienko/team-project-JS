@@ -1,19 +1,3 @@
-// import { getData, url } from './feedback-api';
-// import { createMarkup } from './feedback-markup';
-// import { initFeedbackSwiper } from './feedback-swiper';
-// import { initFeedbackRaty } from './feedback-raty';
-
-// getData(url)
-//   .then(response => {
-//     const reviews = response.data;
-
-//     if (!reviews || reviews.length === 0) return;
-
-//     createMarkup(reviews);
-//     initFeedbackRaty();
-//     initFeedbackSwiper();
-//   })
-//   .catch(err => console.log(err));
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -89,8 +73,7 @@ function initSwiper() {
     on: {
       slideChange: function () {
         const activeIndex = this.realIndex; 
-        const bullets = document.querySelectorAll('.swiper-pagination-bullet');
-        
+        const bullets = document.querySelectorAll('.swiper-pagination-bullet');        
         
         bullets.forEach(b => b.classList.remove('swiper-pagination-bullet-active'));
 

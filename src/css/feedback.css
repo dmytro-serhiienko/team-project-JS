@@ -19,24 +19,81 @@
 .stars-container {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 8px;
   margin-bottom: 20px;
+}
+.star {
+  font-size: 24px;
+  color: #ffffff; 
+}
+
+.star.filled {
+  color: #7e57c2; 
 }
 .swiper {
   width: 100%;
-  height: 100%;
+  height: 300px;
 }
 
 .swiper-slide {
   text-align: center;
-  font-size: 18px;
-  background: #444;
+  font-size: 18px;  
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  bottom: 20px !important;
+}
+
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;  
+  background-color: var(--color-scheme-1-text)!important ;
+  opacity: 1;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  width: 16px;
+  height: 16px;
+  background-color: #fff!important; 
+  transform: scale(1.2);
+}
+
+.swiper-pagination-bullet:hover {
+  background-color: #7e57c2;
+}
+
+
+.custom-arrow {
+  border: 1px solid var(--opacity-white-50);
+  border-radius: 8px;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background: var(--color-scheme-1-foreground);
+}
+
+.feedback-icon-right{
+  fill:#fff
+}
+.custom-arrow{
+  visibility: hidden;
+}
+
+
+
+/* ----------- button -------------- */
 .feedback-btn {
   border-radius: 12px;
   padding: 10px 24px;
@@ -57,47 +114,11 @@
   padding: 10px 78px;
   text-align: center;
 }
-.star {
-  font-size: 24px;
-  color: #ffffff; /* Порожня зірка (біла) */
-}
-
-.star.filled {
-  color: #7e57c2; /* Заповнена зірка (фіолетова) */
-}
-
-.swiper-pagination {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  bottom: 20px !important;
-}
-
-/* Базовий стиль точки */
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(255, 255, 255, 0.2); /* Неактивний колір */
-  opacity: 1;
-  transition: background-color 0.3s, transform 0.3s;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-/* Акцентний стиль для активної точки */
-.swiper-pagination-bullet-active {
-  background-color: #ffffff !important; /* Білий або твій фіолетовий */
-  transform: scale(1.2);
-}
-
-/* Ховер для зручності */
-.swiper-pagination-bullet:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
 
 @media screen and (min-width: 768px) {
-  .feedback {
-    padding: 64px 0;
+  .feedback-container {
+   
+    text-align: center;
   }
   .text-feedback {
     font-size: 26px;
@@ -139,6 +160,52 @@
     background: #764191;
     opacity: 0.6;
   }
+  .swiper {   
+    height: 200px;
+  }
+
+ /* 1. Скидаємо стандартні стилі стрілок Swiper */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "" !important; 
+  display: none;
+}
+
+/* кнопкa-контейнер */
+.custom-arrow {
+  visibility: visible;
+  position: static; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 48px;
+  height: 48px;
+  padding: 0; 
+  
+  background-color: var(--color-scheme-1-foreground);
+  border: 1px solid var(--opacity-white-50);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Стилізуємо іконку */
+.feedback-icon {
+  fill: #fff; 
+  stroke: #fff; 
+  pointer-events: none; 
+  transition: fill 0.3s ease;
+}
+
+.custom-arrow:hover {
+  background-color: #fff;
+}
+
+.custom-arrow:hover .feedback-icon {
+  fill: var(--color-scheme-1-foreground); 
+  stroke: var(--color-scheme-1-foreground);
+}
 }
 
 
