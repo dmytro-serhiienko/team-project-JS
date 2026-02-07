@@ -1,5 +1,5 @@
 .feedback-section {
-  background-color: #000; 
+  background-color: #000;
   color: #fff;
   padding: 60px 0;
 }
@@ -24,11 +24,11 @@
 }
 .star {
   font-size: 24px;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 .star.filled {
-  color: #7e57c2; 
+  color: #7e57c2;
 }
 .swiper {
   width: 100%;
@@ -37,13 +37,11 @@
 
 .swiper-slide {
   text-align: center;
-  font-size: 18px;  
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
 
 .swiper-pagination {
   display: flex;
@@ -52,11 +50,10 @@
   bottom: 20px !important;
 }
 
-
 .swiper-pagination-bullet {
   width: 12px;
-  height: 12px;  
-  background-color: var(--color-scheme-1-text)!important ;
+  height: 12px;
+  background-color: var(--color-scheme-1-text) !important ;
   opacity: 1;
   transition: background-color 0.3s, transform 0.3s;
   border-radius: 50%;
@@ -66,14 +63,9 @@
 .swiper-pagination-bullet-active {
   width: 16px;
   height: 16px;
-  background-color: #fff!important; 
+  background-color: #fff !important;
   transform: scale(1.2);
 }
-
-.swiper-pagination-bullet:hover {
-  background-color: #7e57c2;
-}
-
 
 .custom-arrow {
   border: 1px solid var(--opacity-white-50);
@@ -83,26 +75,20 @@
   height: 48px;
   background: var(--color-scheme-1-foreground);
 }
-
-.feedback-icon-right{
-  fill:#fff
-}
-.custom-arrow{
+.custom-arrow {
   visibility: hidden;
 }
-
-
-
+.user-name{
+  margin-top: 20px;
+}
 /* ----------- button -------------- */
 .feedback-btn {
   border-radius: 12px;
   padding: 10px 24px;
   width: 288px;
   height: 47px;
-  box-shadow:
-    0 1px 2px 0 rgba(6, 3, 7, 0.05),
-    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+  box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(6, 3, 7, 0.15),
     inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
     inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
   background: #764191;
@@ -117,7 +103,6 @@
 
 @media screen and (min-width: 768px) {
   .feedback-container {
-   
     text-align: center;
   }
   .text-feedback {
@@ -136,10 +121,13 @@
 
 @media screen and (min-width: 1440px) {
   .feedback {
-    padding: 112px 0;
+    text-align: center;
   }
-  .text-feedback {
+  .feedback-text {
+    font-weight: 700;
     font-size: 32px;
+    width: 90%;
+    margin-left: 5%;
   }
   .feedback-btn {
     border-radius: 12px;
@@ -151,63 +139,55 @@
     text-align: center;
   }
   .feedback-btn :hover {
-    box-shadow:
-      0 1px 2px 0 rgba(6, 3, 7, 0.05),
-      inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
-      inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+    box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
+      inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(6, 3, 7, 0.15),
       inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
       inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
     background: #764191;
     opacity: 0.6;
   }
-  .swiper {   
-    height: 200px;
+  .swiper {
+    height: 250px;
+    text-align: center;
   }
 
- /* 1. Скидаємо стандартні стилі стрілок Swiper */
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  content: "" !important; 
-  display: none;
+ 
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    content: '' !important;
+    display: none;
+  }
+
+  /* кнопкa-контейнер */
+  .custom-arrow {
+    visibility: visible;
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+
+    background-color: var(--color-scheme-1-foreground);    
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  /* Стилізуємо іконку */
+  .feedback-icon {
+    fill: #fff !important;
+    stroke: #fff !important;   
+    pointer-events: none;
+    transition: fill 0.3s ease;
+  }
+ 
+
+  .custom-arrow:hover .feedback-icon {
+    fill: var(--color-scheme-1-foreground);
+    stroke: var(--color-scheme-1-foreground);
+    opacity: 1;
+  }
 }
-
-/* кнопкa-контейнер */
-.custom-arrow {
-  visibility: visible;
-  position: static; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  width: 48px;
-  height: 48px;
-  padding: 0; 
-  
-  background-color: var(--color-scheme-1-foreground);
-  border: 1px solid var(--opacity-white-50);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Стилізуємо іконку */
-.feedback-icon {
-  fill: #fff; 
-  stroke: #fff; 
-  pointer-events: none; 
-  transition: fill 0.3s ease;
-}
-
-.custom-arrow:hover {
-  background-color: #fff;
-}
-
-.custom-arrow:hover .feedback-icon {
-  fill: var(--color-scheme-1-foreground); 
-  stroke: var(--color-scheme-1-foreground);
-}
-}
-
-
-
-

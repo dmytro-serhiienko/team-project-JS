@@ -51,7 +51,7 @@ function initSwiper() {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
     spaceBetween: 20,
-    grabCursor: true, // для свайпу
+    grabCursor: false, // для свайпу
 
     navigation: {
       nextEl: '.swiper-button-next',
