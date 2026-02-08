@@ -2,32 +2,31 @@
   <h2 class="visually-hidden">Feedbacks our visitors</h2>
 
   <div class="container" id="feedback">
-
     <div class="feedback">
-
-
       <div class="swiper feedback-slider">
         <div class="swiper-wrapper" id="feedback-container"></div>
-        
-        <button class="swiper-button-prev custom-arrow">
 
+        <button
+          class="swiper-button-prev custom-arrow"
+          aria-label="Попередній відгук"
+        >
           <svg class="feedback-icon">
             <use href="img/icons.svg#icon-arrow-left"></use>
           </svg>
         </button>
-        <button class="swiper-button-next custom-arrow">
+        <button
+          class="swiper-button-next custom-arrow"
+          aria-label="Наступний відгук"
+        >
           <svg class="feedback-icon">
             <use href="img/icons.svg#icon-arrow-right"></use>
-        </svg>
-        </button>        
-        <div class="swiper-pagination"></div>        
-
-      
-        
-
+          </svg>
+        </button>
+        <div class="swiper-pagination"></div>
       </div>
-      <button type="submit" class="feedback-btn">Leave feedback</button>
+      <button type="submit" class="feedback-btn" aria-label="Залишити відгук">
+        Leave feedback
+      </button>
     </div>
-    </div>
+  </div>
 </section>
-

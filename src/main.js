@@ -6,6 +6,7 @@ import './js/mobile-menu.js';
 import './js/artists.js';
 import './js/artist-details-modal.js';
 import './js/feedback.js';
+import './js/gsap.js';
 
 import './js/feedback-modal.js';
 //import './js/feedback-swiper.js';
