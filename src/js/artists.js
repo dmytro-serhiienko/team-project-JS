@@ -2,7 +2,7 @@ import axios from 'axios';
 import { openArtistModal } from './artist-details-modal';
 
 // іконки
-import iconsUrl from '../img/icons.svg';
+import iconsUrl from '../public/img/icons.svg';
 
 async function fetchArtists(page = 1) {
   try {

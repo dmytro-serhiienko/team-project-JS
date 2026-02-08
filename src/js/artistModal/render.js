@@ -3,7 +3,7 @@ import { formatDuration } from './time-format.js';
 import { organizeTracksByAlbum } from './albumGrouping.js';
 
 // іконки
-import iconsUrl from '../../img/icons.svg';
+import iconsUrl from '../../public/img/icons.svg';
 
 export function renderArtistAlbums(tracksList, artistName) {
   const albumsContainer = domRefs.albums.container;

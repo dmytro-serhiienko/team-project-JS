@@ -2,6 +2,9 @@
 // 1. HELPERS
 // ================================================
 
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 function lockScroll() {
   document.body.classList.add('body-no-scroll');
 }
@@ -141,17 +144,32 @@ function initForm() {
     let valid = true;
 
     if (!name) {
-      showError(nameInput, 'Імʼя обовʼязкове');
+      iziToast.error({
+        title: 'Помилка',
+        message: 'Імʼя обовʼязкове',
+        position: 'topRight',
+        timeout: 3000,
+      });
       valid = false;
     }
 
     if (!descr || descr.length < 10) {
-      showError(messageInput, 'Мінімум 10 символів');
+      iziToast.error({
+        title: 'Помилка',
+        message: 'Мінімум 10 символів',
+        position: 'topRight',
+        timeout: 3000,
+      });
       valid = false;
     }
 
     if (rating < 1 || rating > 5) {
-      showError(ratingBlock, 'Оберіть рейтинг');
+      iziToast.error({
+        title: 'Помилка',
+        message: 'Оберіть рейтинг',
+        position: 'topRight',
+        timeout: 3000,
+      });
       valid = false;
     }
 
@@ -180,16 +198,24 @@ function initForm() {
         .forEach(s => s.classList.remove('active'));
 
       closeModal();
-      alert('Дякуємо за відгук!');
+
+      iziToast.success({
+        title: 'Успіх',
+        message: 'Дякуємо за відгук!',
+        position: 'topRight',
+        timeout: 3000,
+        backgroundColor: '#4caf50',
+        messageColor: '#fff',
+        titleColor: '#fff',
+        progressBarColor: '#2e7d32',
+      });
     } catch {
-      const err = document.createElement('div');
-      err.className = 'server-error-message';
-      err.textContent = 'Помилка відправки';
-      err.style.color = '#dc2626';
-      err.style.textAlign = 'center';
-      err.style.marginTop = '16px';
-      form.appendChild(err);
-      setTimeout(() => err.remove(), 5000);
+      iziToast.error({
+        title: 'Помилка',
+        message: 'Помилка відправки. Спробуйте ще раз',
+        position: 'topRight',
+        timeout: 5000,
+      });
     } finally {
       submitBtn.disabled = false;
       submitText.hidden = false;
