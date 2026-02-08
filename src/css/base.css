@@ -21,3 +21,6 @@ h2 {
   color: #fff;
   background: #060307;
 }
+html {
+  scroll-behavior: smooth;
+}
