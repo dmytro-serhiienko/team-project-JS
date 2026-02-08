@@ -65,7 +65,7 @@
   font-size: 18px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-    fill: #fff;
+  fill: #fff;
   border-radius: 12px;
   padding: 10px 24px;
   box-shadow:
@@ -165,7 +165,7 @@ main {
     width: 704px;
   }
 
-  .hero__img::after {
+  .hero-img::after {
     content: '';
     position: absolute;
     pointer-events: none;
@@ -179,7 +179,7 @@ main {
 }
 
 @media (min-resolution: 192dpi) and (min-width: 768px) {
-  .hero__img {
+  .hero-img {
     background-image: url('../img/hero/tablet/hero-tablet-2x.webp');
   }
 }
