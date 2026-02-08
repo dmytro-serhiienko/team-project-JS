@@ -218,76 +218,81 @@ if (isDesktop()) {
     },
   });
 
-  // FEEDBACK SECTION - Анімація при скролі
-  ScrollTrigger.create({
-    trigger: '.feedback',
-    start: 'top bottom',
-    once: true,
-    onEnter: () => {
-      const feedbackTimeline = gsap.timeline();
+  // FEEDBACK SECTION - Анімація при скролі (вимкнено)
+  // ScrollTrigger.create({
+  //   trigger: '.feedback',
+  //   start: 'top bottom',
+  //   once: true,
+  //   onEnter: () => {
+  //     const feedbackTimeline = gsap.timeline();
 
-      feedbackTimeline
-        .from('.feedback-slider', {
-          opacity: 0,
-          y: 50,
-          scale: 0.95,
-          duration: 1,
-          ease: 'power3.out',
-        })
-        .from(
-          '.swiper-button-prev',
-          {
-            opacity: 0,
-            x: -20,
-            duration: 0.6,
-            ease: 'power3.out',
-          },
-          '-=0.5'
-        )
-        .from(
-          '.swiper-button-next',
-          {
-            opacity: 0,
-            x: 20,
-            duration: 0.6,
-            ease: 'power3.out',
-          },
-          '-=0.6'
-        )
-        .from(
-          '.feedback-btn',
-          {
-            opacity: 0,
-            y: 20,
-            scale: 0.9,
-            duration: 0.6,
-            ease: 'back.out(1.7)',
-          },
-          '-=0.4'
-        );
-    },
-  });
+  //     feedbackTimeline.from('.feedback-slider', {
+  //       opacity: 0,
+  //       y: 50,
+  //       scale: 0.95,
+  //       duration: 1,
+  //       ease: 'power3.out',
+  //     });
 
-  ScrollTrigger.create({
-    trigger: '.feedback',
-    start: 'top 75%',
-    once: true,
-    onEnter: () => {
-      const slides = document.querySelectorAll(
-        '#feedback-container .swiper-slide'
-      );
-      if (slides.length > 0) {
-        gsap.from(slides, {
-          opacity: 0,
-          scale: 0.9,
-          stagger: 0.1,
-          duration: 0.6,
-          delay: 0.5,
-          ease: 'power3.out',
-        });
-      }
-    },
-  });
+  //     // Анімація стрілок тільки на десктопі (1440px+)
+  //     if (window.matchMedia('(min-width: 1440px)').matches) {
+  //       feedbackTimeline
+  //         .from(
+  //           '.swiper-button-prev',
+  //           {
+  //             opacity: 0,
+  //             x: -20,
+  //             duration: 0.6,
+  //             ease: 'power3.out',
+  //           },
+  //           '-=0.5'
+  //         )
+  //         .from(
+  //           '.swiper-button-next',
+  //           {
+  //             opacity: 0,
+  //             x: 20,
+  //             duration: 0.6,
+  //             ease: 'power3.out',
+  //           },
+  //           '-=0.6'
+  //         );
+  //     }
+
+  //     feedbackTimeline.from(
+  //       '.feedback-btn',
+  //       {
+  //         opacity: 0,
+  //         y: 20,
+  //         scale: 0.9,
+  //         duration: 0.6,
+  //         ease: 'back.out(1.7)',
+  //       },
+  //       '-=0.4'
+  //     );
+  //   },
+  // });
+
+  // ScrollTrigger.create({
+  //   trigger: '.feedback',
+  //   start: 'top 75%',
+  //   once: true,
+  //   onEnter: () => {
+  //     const slides = document.querySelectorAll(
+  //       '#feedback-container .swiper-slide'
+  //     );
+  //     if (slides.length > 0) {
+  //       gsap.from(slides, {
+  //         opacity: 0,
+  //         scale: 0.9,
+  //         stagger: 0.1,
+  //         duration: 0.6,
+  //         delay: 0.5,
+  //         ease: 'power3.out',
+  //       });
+  //     }
+  //   },
+  // });
 }
 
 export function animateNewArtistCards(cards) {

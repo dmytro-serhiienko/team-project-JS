@@ -68,15 +68,6 @@
   transform: scale(1.2);
 }
 
-.custom-arrow {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-  padding: 12px;
-  width: 48px;
-  height: 48px;
-  background: var(--color-scheme-1-foreground);
-}
-
 .feedback-text {
   font-size: 18px;
 }
@@ -110,11 +101,12 @@
   resize: none;
   height: 250px;
 }
-@media screen and (max-width: 767px) {
-  .custom-arrow {
-    visibility: hidden;
-  }
+
+/* Приховуємо стрілочки на мобільних та планшетах */
+.custom-arrow {
+  display: none !important;
 }
+
 /* -------------------- 768 ------------------- */
 @media screen and (min-width: 768px) {
   .feedback {
@@ -126,8 +118,10 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* Залишаємо приховані на планшеті */
   .custom-arrow {
-    visibility: visible;
+    display: none !important;
   }
   .feedback-icon {
     width: 24px !important;
@@ -187,34 +181,33 @@
     display: none;
   }
 
-  /* кнопкa-контейнер */
+  /* Показуємо стрілочки тільки на десктопі */
   .custom-arrow {
-    visibility: visible;
-
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
     padding: 0;
-    background-color: rgb(from var(--color-scheme-1-foreground) r g b / 20%);
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    opacity: 0.8;
+  }
+
+  .custom-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .feedback-icon {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    pointer-events: none;
   }
 
   .custom-arrow:hover .feedback-icon {
-    fill: var(--color-scheme-1-foreground);
-    stroke: var(--color-scheme-1-foreground);
-    opacity: 1;
+    fill: #7e57c2;
   }
-}
-
-.custom-arrow:hover .feedback-icon {
-  fill: var(--color-scheme-1-foreground);
-  stroke: var(--color-scheme-1-foreground);
-}
-.custom-arrow {
-  visibility: visible;
 }
