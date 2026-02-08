@@ -38,7 +38,7 @@ function renderFeedbacks(feedbacks) {
       <div class="swiper-slide">
         <div class="stars-container">${stars}</div>
         <p class="feedback-text">"${descr}"</p>
-        <p class="user-name">${name}</p>
+        <p class="feedback-user-name">${name}</p>
       </div>
     `;
   }).join('');

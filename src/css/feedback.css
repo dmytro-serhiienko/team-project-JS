@@ -1,5 +1,4 @@
 .feedback-section {
-
   background-color: #000;
 
   color: #fff;
@@ -46,7 +45,6 @@
   align-items: center;
 }
 
-
 .swiper-pagination {
   display: flex;
   justify-content: center;
@@ -54,13 +52,10 @@
   bottom: 20px !important;
 }
 
-
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: var(--color-scheme-1-text) !important ;
-
-  opacity: 1;
+  background-color: #eee !important;
   transition: background-color 0.3s, transform 0.3s;
   border-radius: 50%;
   cursor: pointer;
@@ -74,13 +69,8 @@
   transform: scale(1.2);
 }
 
-
-
-
-
-
 .custom-arrow {
-  border: 1px solid var(--opacity-white-50);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 8px;
   padding: 12px;
   width: 48px;
@@ -91,14 +81,13 @@
 .custom-arrow {
   visibility: hidden;
 }
-.user-name{
-  margin-top: 20px;
+.feedback-text {
+  font-size: 18px;
 }
-
-
-
-
-
+.feedback-user-name {
+  margin-top: 32px;
+  font-size: 18px;
+}
 
 /* ----------- button -------------- */
 .feedback-btn {
@@ -119,17 +108,30 @@
   padding: 10px 78px;
   text-align: center;
 }
-
+.feedback-textarea{
+  resize: none;
+  height: 250px;
+}
+/* -------------------- 768 ------------------- */
 @media screen and (min-width: 768px) {
-  .feedback-container {
-
-
-   
-
+  .feedback {
     text-align: center;
   }
-  .text-feedback {
+  .feedback-text {
+    width: 518px;
     font-size: 26px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .custom-arrow {
+    visibility: visible;
+  }
+  .feedback-icon {
+    width: 24px !important;
+    fill: #fff !important;
+    stroke: #fff !important;
+    pointer-events: none;
+    transition: fill 0.3s ease;
   }
   .feedback-btn {
     border-radius: 12px;
@@ -141,7 +143,7 @@
     text-align: center;
   }
 }
-
+/* ------------------- 1440 ---------------- */
 @media screen and (min-width: 1440px) {
   .feedback {
     text-align: center;
@@ -149,9 +151,9 @@
   .feedback-text {
     font-weight: 700;
     font-size: 32px;
-    width: 90%;
-    margin-left: 5%;
+    width: 868px;
   }
+
   .feedback-btn {
     border-radius: 12px;
     padding: 10px 24px;
@@ -171,11 +173,9 @@
   }
 
   .swiper {
-    height: 250px;
-    text-align: center;
+    height: 300px;
   }
 
- 
   .swiper-button-prev::after,
   .swiper-button-next::after {
     content: '' !important;
@@ -192,9 +192,9 @@
     width: 48px;
     height: 48px;
     padding: 0;
-    
+
     /* background-color: var(--color-scheme-1-foreground); */
-    background-color: rgb(from var(--color-scheme-1-foreground) r g b / 20%);    
+    background-color: rgb(from var(--color-scheme-1-foreground) r g b / 20%);
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -202,29 +202,15 @@
   }
 
   /* Стилізуємо іконку */
-  .feedback-icon {
-    width: 24px !important;    
-    fill: #fff !important;
-    stroke: #fff !important;   
-    pointer-events: none;
-    transition: fill 0.3s ease;
-  }
- 
 
   .custom-arrow:hover .feedback-icon {
     fill: var(--color-scheme-1-foreground);
     stroke: var(--color-scheme-1-foreground);
     opacity: 1;
   }
-
 }
 
 .custom-arrow:hover .feedback-icon {
-  fill: var(--color-scheme-1-foreground); 
+  fill: var(--color-scheme-1-foreground);
   stroke: var(--color-scheme-1-foreground);
 }
-
-
-
-
-
