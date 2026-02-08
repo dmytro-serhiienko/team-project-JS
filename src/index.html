@@ -21,14 +21,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link
       rel="preload"
       as="image"
       imagesrcset="
-    ./img/hero/hero-mobile-1x.webp 1x,
-    ./img/hero/hero-mobile-2x.webp 2x
-  "
-      imagesizes="100vw"
+        ./img/hero/hero-mobile-1x.webp 280w,
+        ./img/hero/hero-mobile-2x.webp 560w
+      "
+      imagesizes="280px"
       media="(max-width: 767px)"
       fetchpriority="high"
     />
@@ -37,11 +38,11 @@
       rel="preload"
       as="image"
       imagesrcset="
-    ./img/hero/hero-tablet-1x.webp 1x,
-    ./img/hero/hero-tablet-2x.webp 2x
-  "
-      imagesizes="100vw"
-      media="(min-width: 768px) and (max-width: 1157px)"
+        ./img/hero/hero-tablet-1x.webp 704w,
+        ./img/hero/hero-tablet-2x.webp 1408w
+      "
+      imagesizes="704px"
+      media="(min-width: 768px) and (max-width: 1439px)"
       fetchpriority="high"
     />
 
@@ -49,10 +50,10 @@
       rel="preload"
       as="image"
       imagesrcset="
-    ./img/hero/hero-desktop-1x.webp 1x,
-    ./img/hero/hero-desktop-2x.webp 2x
-  "
-      imagesizes="100vw"
+        ./img/hero/hero-desktop-1x.webp 640w,
+        ./img/hero/hero-desktop-2x.webp 1280w
+      "
+      imagesizes="640px"
       media="(min-width: 1440px)"
       fetchpriority="high"
     />
