@@ -83,7 +83,7 @@ export function renderArtistDetails(data) {
 
   name.textContent = data.strArtist ?? 'No name';
   thumb.src =
-    data.strArtistThumb || 'https://via.placeholder.com/200x200?text=No+Image';
+    data.strArtistThumb || 'https://placehold.co/200x200?text=No+Image';
   thumb.alt = `Artist photo ${data.strArtist ?? ''}`;
   bio.textContent = data.strBiographyEN ?? 'No description';
 
