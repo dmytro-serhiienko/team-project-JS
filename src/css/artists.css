@@ -1,6 +1,7 @@
 .artists {
   padding: 64px 0;
 }
+
 .artists__title {
   font-weight: 600;
   font-size: 16px;
@@ -86,6 +87,10 @@
   gap: 64px;
   margin-bottom: 32px;
 }
+
+.artists__dropdown-menu { display: none; }
+.artists__dropdown-menu.is-open { display: block; }
+
 
 .artists__card-btn-icon {
   fill: #fff;
@@ -342,3 +347,5 @@
     transform: rotate(360deg);
   }
 }
+
+

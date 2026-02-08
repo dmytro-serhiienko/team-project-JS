@@ -3,19 +3,63 @@
     <div class="artists__section">
       <h2 class="artists__title">Artists</h2>
       <p class="artists__subtitle">Explore Your New Favorite Artists</p>
+
+      <!-- ✅ Controls: Genres / Sort / Search / Reset -->
+      <div class="artists__controls">
+        <!-- Genres dropdown -->
+        <div class="artists__dropdown">
+          <button type="button" class="artists__dropdown-btn" data-genres-btn>
+            Genres
+          </button>
+          <ul class="artists__dropdown-menu" data-genres-menu></ul>
+        </div>
+
+        <!-- Sort dropdown -->
+        <div class="artists__dropdown">
+          <button type="button" class="artists__dropdown-btn" data-sort-btn>
+            Sort
+          </button>
+          <ul class="artists__dropdown-menu" data-sort-menu></ul>
+        </div>
+
+        <!-- Search -->
+        <form class="artists__search" data-artists-search-form>
+          <input
+            type="text"
+            class="artists__search-input"
+            data-artists-search
+            placeholder="Search artist..."
+          />
+          <button type="submit" class="artists__search-btn" aria-label="Search">
+            🔍
+          </button>
+        </form>
+
+        <!-- Reset -->
+        <button type="button" class="artists__reset-btn" data-artists-reset>
+          Reset
+        </button>
+      </div>
+
+      <!-- empty message -->
+      <p class="artists__empty visually-hidden" data-artists-empty>
+        Nothing found
+      </p>
+
+      <!-- list -->
       <ul class="artists__list"></ul>
+
+      <!-- pagination container -->
+      <div id="artists-pagination" class="artists__pagination visually-hidden"></div>
+
+      <!-- load more + loader -->
       <div class="artists__load-more-wrapper">
         <div class="artists__loader-wrapper">
           <span class="loader visually-hidden"></span>
         </div>
         <button class="artists__load-more-btn">
           Load More
-          <svg
-            class="artists__scroll-icon"
-            width="24"
-            height="24"
-            fill="#ffffff"
-          >
+          <svg class="artists__scroll-icon" width="24" height="24" fill="#ffffff">
             <use href="img/icons.svg#icon_artists_down"></use>
           </svg>
         </button>
@@ -23,3 +67,5 @@
     </div>
   </div>
 </section>
+
+
