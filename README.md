@@ -1,4 +1,4 @@
-![img](../team-project-JS/src/public/readme.png)
+![img](src/public/readme.png)
 
 ## Key Technologies
 
