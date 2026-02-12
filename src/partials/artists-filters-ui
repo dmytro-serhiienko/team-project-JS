@@ -1,0 +1,46 @@
+<div class="afilters">
+  <div class="afilters__header">
+    <h3 class="afilters__title">Filters</h3>
+    <button type="button" class="afilters__reset" data-artists-reset>Reset</button>
+  </div>
+
+  <!-- Search -->
+  <form class="afilters__search" data-artists-search-form>
+    <span class="afilters__search-icon">🔍</span>
+    <input
+      class="afilters__search-input"
+      type="text"
+      placeholder="Search"
+      data-artists-search
+    />
+  </form>
+
+  <!-- Sorting -->
+  <div class="afilters__block">
+    <button type="button" class="afilters__select" data-sort-btn>
+      <span class="afilters__label">Sorting</span>
+      <span class="afilters__value" data-sort-value>Default</span>
+      <span class="afilters__chev">⌄</span>
+    </button>
+
+    <ul class="afilters__menu" data-sort-menu>
+      <li class="afilters__item" data-sort="">Default</li>
+      <li class="afilters__item" data-sort="asc">A-Z</li>
+      <li class="afilters__item" data-sort="desc">Z-A</li>
+    </ul>
+  </div>
+
+  <!-- Genre -->
+  <div class="afilters__block">
+    <button type="button" class="afilters__select" data-genres-btn>
+      <span class="afilters__label">Genre</span>
+      <span class="afilters__value" data-genre-value>All Genres</span>
+      <span class="afilters__chev">⌄</span>
+    </button>
+
+    <ul class="afilters__menu afilters__menu--scroll" data-genres-menu>
+      <!-- JS підставить жанри -->
+      <li class="afilters__item" data-genre="">All Genres</li>
+    </ul>
+  </div>
+</div>
